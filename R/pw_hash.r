@@ -91,9 +91,6 @@ pw_hash <- function(pass, variant="i", iterations=16, memory=8, nthreads=2)
 #' @export
 pw_check <- function(hash, pass)
 {
-  if (!isTRUE(attr(hash, "hashtype") == "argon2"))
-    stop("argument 'hash' must be an argon2 hash, returned from argon2::pw_hash()")
-  
   check.is.string(hash)
   check.is.string(pass)
   
